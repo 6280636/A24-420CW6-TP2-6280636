@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../services/Spotify.service';
+import { SpotifyService } from '../services/spotify.service';
 import { Artist } from '../models/artist';
 
 @Component({

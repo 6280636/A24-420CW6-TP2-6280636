@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { GoogleService } from '../services/google.service';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { Album } from '../models/album';
-import { SpotifyService } from '../services/Spotify.service';
+import { SpotifyService } from '../services/spotify.service';
 import { Song } from '../models/song';
 import { ActivatedRoute } from '@angular/router';
 
