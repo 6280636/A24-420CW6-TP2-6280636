@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Album } from '../models/album';
-import { SpotifyService } from '../services/Spotify.service';
+import { SpotifyService } from '../services/spotify.service';
 import { ArtistComponent } from '../artist/artist.component';
 import { Artist } from '../models/artist';
 import { ActivatedRoute } from '@angular/router';
