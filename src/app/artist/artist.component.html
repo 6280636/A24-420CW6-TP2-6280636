@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="search">
+      <h3>Ajouter un artiste</h3>
+      <form>
+          <input type="text" [(ngModel)]= "artistName" name="artistName" placeholder="Nana Mouskouri">
+          <button (click)="getArtist()" class="btn btn-light">Rechercher</button>
+      </form>   
+  </div>
+  <div class="display">
+      <h3>Vos artistes</h3>
+      <div class="row">
+  
+          <!-- Liste d'artistes ajoutés aux favoris -->
+          <div *ngFor="let artist of tabArtistes">
+              <h4>{{ artist.name }}</h4>
+              <img [src]="artist.imageUrl" [alt]="artist.name">
+          <button [routerLink]="['/album',artist.id]">Albums</button>
+          <button [routerLink]="['/show']">Concerts</button> 
+          <button (click)="deleteArtist(artist.id)" class="btn btn-light">Delete</button>    
+      </div>
+  </div>
+  </div>
