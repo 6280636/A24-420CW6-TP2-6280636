@@ -1,0 +1,17 @@
+<h3>Chansons de l'album X</h3>
+<div class="row">
+    <div class="youtubePlayer">
+        <!-- <img src="assets/images/yourubeplayer.png" alt="Youtube player"> -->
+        <iframe width="700" height="400" [src]="google.getSafeUrl(videoId)" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="songs">
+        <div class="songList">
+            
+            Liste de chansons d'un album choisi 
+            <div *ngFor="let song of tabSongs">
+                <p>{{song.name}}</p>
+                <button (click)="serarchVideo(song)">Jouer</button>
+            </div>
+        </div>
+    </div>
+</div>            
