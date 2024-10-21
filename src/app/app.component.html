@@ -5,10 +5,10 @@
           <div><a [routerLink]="['/artist']">{{'AppComponent.header' | translate}}</a></div>
           <div class="spacer"></div>
           <div>
-              <select name="language" id="language">
-                  <option (click)="changeLanguage('fr')" value="fr-ca">Français</option>
-                  <option (click)="changeLanguage('en')" value="en-us">English</option>
-              </select>
+              <!-- <select name="language" id="language"> -->
+                  <button (click)="changeLanguage('fr')" value="fr-ca">Français</button>
+                  <button (click)="changeLanguage('en')" value="en-us">English</button>
+              <!-- </select> -->
           </div>
       </div>
   </header>
@@ -17,7 +17,7 @@
   </main>
   <footer>
       <div>
-          &copy; {{'AppComponent.header' | translate}}<!-- Tous droits réservés à Spotify, BandsInTown et Google -->
+          &copy; {{'AppComponent.footer' | translate}}<!-- Tous droits réservés à Spotify, BandsInTown et Google -->
       </div>
   </footer>
   </body>
