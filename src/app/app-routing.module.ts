@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: "artist", component: ArtistComponent},
   /* {path: "album", component: AlbumComponent}, */
   { path: "album/:id", component: AlbumComponent },
-  {path: 'show', component: ShowComponent },
+  /* {path: 'show', component: ShowComponent }*/
+  {path: 'show/:name', component: ShowComponent },
   /* {path: "song", component: SongComponent} */
   {path: "song/:id", component: SongComponent}
 ];

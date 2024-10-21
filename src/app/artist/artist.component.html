@@ -15,7 +15,7 @@
               <h4>{{ artist.name }}</h4>
               <img [src]="artist.imageUrl" [alt]="artist.name">
           <button [routerLink]="['/album',artist.id]">Albums</button>
-          <button [routerLink]="['/show']">Concerts</button> 
+          <button [routerLink]="['/show', artist.name]">Concerts</button> 
           <button (click)="deleteArtist(artist.id)" class="btn btn-light">Delete</button>    
       </div>
   </div>

@@ -32,7 +32,7 @@ async loadSongs(albumId: string){
   const album = new Album(albumId, "", "");
   try {
       this.tabSongs = await this.httpService.getSongs(album);
-      console.log(this.tabSongs); // Verifica aquí si está recibiendo datos
+      console.log(this.tabSongs);
         } catch (error) {
       console.error('Error loading songs:', error);
         }
