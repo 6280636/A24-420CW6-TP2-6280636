@@ -2,12 +2,12 @@
   <header>
       <div class="row">
           <!-- <div><a href="/artist.html">J'ai yoink le template de l'enseignant</a></div> -->
-          <div><a [routerLink]="['/artist']">J'ai yoink le template de l'enseignant</a></div>
+          <div><a [routerLink]="['/artist']">{{'AppComponent.header' | translate}}</a></div>
           <div class="spacer"></div>
           <div>
               <select name="language" id="language">
-                  <option value="fr-ca">Français</option>
-                  <option value="en-us">English</option>
+                  <option (click)="changeLanguage('fr')" value="fr-ca">Français</option>
+                  <option (click)="changeLanguage('en')" value="en-us">English</option>
               </select>
           </div>
       </div>
@@ -17,7 +17,7 @@
   </main>
   <footer>
       <div>
-          &copy; Tous droits réservés à Spotify, BandsInTown et Google
+          &copy; {{'AppComponent.header' | translate}}<!-- Tous droits réservés à Spotify, BandsInTown et Google -->
       </div>
   </footer>
   </body>
