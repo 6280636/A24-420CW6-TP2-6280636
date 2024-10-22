@@ -13,7 +13,7 @@ import { Show } from '../models/show';
 export class ShowComponent implements OnInit {
   lati: number = 0;
   long: number = 0;
-  city: string | null = null;
+  city: string[]= [];
   country: string | null = null;
   artistName?: string | null = null;
   tabShows: Show[] = [];
@@ -27,34 +27,31 @@ export class ShowComponent implements OnInit {
     this.artistName = await this.route.snapshot.paramMap.get('name');
     if (this.artistName){
       await this.searchShows();
-      console.log(this.lati);
-      console.log(this.artistName);
-      console.log(this.markerPositions);
+      //console.log(this.lati);
+      //console.log(this.artistName);
+     // console.log(this.markerPositions);
     }
   }
   
-  async searchShows(){
-    
-    let x = await lastValueFrom(this.httpService.get<any>("https://rest.bandsintown.com/artists/luismiguel/events?app_id=API_KEY"))
+  async searchShows(){     
+    let x = await lastValueFrom(this.httpService.get<any>("https://rest.bandsintown.com/artists/"+this.artistName+"/events?app_id=API_KEY"))
     console.log(x);
-    this.markerPositions = [];
-    if(x.length > 0){
-    this.lati = x.venue.latitude;
-    this.long = x.venue.longitude;  
-    this.city = x.venue.city;
-    this.country = x.venue.country;  
-   
-
-    /* this.tabShows = [x.venue.city, x.venue.country]; */
-
-    /* this.markerPositions = [{lat: this.lati, lng: this.long}] */   
-      } 
+    for(let index = 0; index < x.length; index++)
+    {
+      let position : google.maps.LatLngLiteral = {lat: x[index].venue.latitude, lng: x[index].venue.longitude};
+      this.markerPositions.push({lat: x[index].venue.latitude, lng: x[index].venue.longitude}); 
+      
+    }
+  
+   //this.center = this.markerPositions[0];
+    console.log(this.markerPositions);
+      
   }
-  addBalloon() : void {
+ /*  addBalloon() : void {
     if(this.lati != null && this.long != null)
       this.markerPositions.push({lat: this.lati, lng: this.long}) 
        
     // Ajoutez un marqueur dans votre tableau de marqueurs en vous servant des données this.inputLat et this.inputLng !
-  }
+  } */
 
 }
