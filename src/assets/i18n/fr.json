@@ -1,0 +1,28 @@
+{  
+   "AppComponent": {
+    "header": "J'ai pris le modèle du professeur",
+    "footer": "Tous droits réservés à Spotify, BandsInTown et Google"
+     },
+     "AlbumComponent": {
+        "title": "Albums de",
+        "Album": "Album",
+        "Chansons": "Chansons"
+     },
+     "ArtistComponent": {
+        "title": "Ajouter un artiste",
+        "Rechercher": "Rechercher",
+        "Vos artistes": "Vos artistes",
+        "Album": "Album",
+        "Concerts": "Concerts",
+        "Supprimer": "Supprimer"
+     },
+     "SongComponent": {
+        "title": "Chansons de l'album",
+        "Jouer": "Jouer"
+
+     },
+    "ShowComponent": {
+        "title": "Concerts de l'artiste"
+        
+    }
+}

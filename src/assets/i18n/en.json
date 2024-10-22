@@ -1,0 +1,28 @@
+ {  
+   "AppComponent": {
+    "header": "I yoinked the teacher's template",
+    "footer": "All rights reserved to Spotify, BandsInTown, and Google"
+     },
+     "AlbumComponent": {
+        "title": "Albums of",
+        "Album": "Albums",
+        "Chansons": "Song"
+     },
+     "ArtistComponent": {
+        "title": "Add an artist",
+        "Rechercher": "Search",
+        "Vos artistes": "Your artists",
+        "Album": "Albums",
+        "Concerts": "Concerts",
+        "Supprimer": "Delete"
+     },
+     "SongComponent": {
+        "title": "Songs from the album",
+        "Jouer": "Play"
+
+     },
+    "ShowComponent": {
+        "title": "Songs from the album"
+       
+    }
+}

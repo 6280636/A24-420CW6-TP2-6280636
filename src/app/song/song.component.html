@@ -1,4 +1,4 @@
-<h3>Chansons de l'album X</h3>
+<h3>{{'SongComponent.title' | translate}}</h3>
 <div class="row">
     <div class="youtubePlayer">
         <!-- <img src="assets/images/yourubeplayer.png" alt="Youtube player"> -->
@@ -7,10 +7,10 @@
     <div class="songs">
         <div class="songList">
             
-            Liste de chansons d'un album choisi 
+            <!-- Liste de chansons d'un album choisi  -->
             <div *ngFor="let song of tabSongs">
                 <p>{{song.name}}</p>
-                <button (click)="serarchVideo(song)">Jouer</button>
+                <button (click)="serarchVideo(song)">{{'SongComponent.Jouer' | translate}}</button>
             </div>
         </div>
     </div>
