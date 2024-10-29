@@ -17,32 +17,10 @@
 
             <!-- Liste des concerts -->
     <div *ngFor="let place of tabShows">
-        <h4>Jan 1, 2024, 8:00:00 PM</h4>
+        <h4>{{place.date}}</h4>
         <p>{{place.pays}}</p>
-        <p>{{place.city}}</p>
-        <p>{{artistName}}</p>
-    </div>
-    <!-- <div>
-        <h4>Jan 1, 2024, 8:00:00 PM</h4>
-        <p>Pays</p>
-        <p>Ville</p>
-    </div>
-    <div>
-        <h4>Jan 1, 2024, 8:00:00 PM</h4>
-        <p>Pays</p>
-        <p>Ville</p>
-    </div>
-    <div>
-        <h4>Jan 1, 2024, 8:00:00 PM</h4>
-        <p>Pays</p>
-        <p>Ville</p>
-    </div>
-    <div>
-        <h4>Jan 1, 2024, 8:00:00 PM</h4>
-        <p>Pays</p>
-        <p>Ville</p>
-    </div> -->
-
-    </div>           
+        <p>{{place.city}}</p>        
+    </div>    
+    </div>         
 
 </div>

@@ -15,6 +15,7 @@ export class ShowComponent implements OnInit {
   long: number = 0;
   city: string | null = null;
   country: string | null = null;
+  date?: Date;
   artistName?: string | null = null;
   tabShows: Show[] = [];
 
@@ -27,34 +28,37 @@ export class ShowComponent implements OnInit {
     this.artistName = await this.route.snapshot.paramMap.get('name');
     if (this.artistName){
       await this.searchShows();
-      console.log(this.lati);
+      /* console.log(this.lati); */
       console.log(this.artistName);
-      console.log(this.markerPositions);
+      /* console.log(this.markerPositions); */
     }
   }
   
   async searchShows(){
     
-    let x = await lastValueFrom(this.httpService.get<any>("https://rest.bandsintown.com/artists/luismiguel/events?app_id=API_KEY"))
+    let x = await lastValueFrom(this.httpService.get<any>("https://rest.bandsintown.com/artists/"+ this.artistName+"/events?app_id=API_KEY"));
     console.log(x);
     this.markerPositions = [];
+    this.tabShows = [];
     if(x.length > 0){
-    this.lati = x.venue.latitude;
-    this.long = x.venue.longitude;  
-    this.city = x.venue.city;
-    this.country = x.venue.country;  
-   
-
-    /* this.tabShows = [x.venue.city, x.venue.country]; */
-
-    /* this.markerPositions = [{lat: this.lati, lng: this.long}] */   
+      for(let event of x){
+       
+          this.lati = parseFloat(event.venue.latitude);
+          this.long = parseFloat(event.venue.longitude);
+          this.city = event.venue.city;
+          this.country = event.venue.country;
+          let newShow = new Show (event.venue.city, event.venue.country, event.datetime);
+          this.tabShows.push(newShow);
+          
+          this.markerPositions.push({lat: this.lati, lng: this.long}) ; 
+          
+        }
+        console.log(this.tabShows);
+        console.log(this.markerPositions);
+      }
+    
+    
       } 
   }
-  addBalloon() : void {
-    if(this.lati != null && this.long != null)
-      this.markerPositions.push({lat: this.lati, lng: this.long}) 
-       
-    // Ajoutez un marqueur dans votre tableau de marqueurs en vous servant des données this.inputLat et this.inputLng !
-  }
+ 
 
-}
