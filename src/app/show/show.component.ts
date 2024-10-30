@@ -13,7 +13,7 @@ import { Show } from '../models/show';
 export class ShowComponent implements OnInit {
   lati: number = 0;
   long: number = 0;
-  city: string | null = null;
+  city: string[]= [];
   country: string | null = null;
   date?: Date;
   artistName?: string | null = null;
